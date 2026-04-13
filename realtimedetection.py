@@ -49,7 +49,15 @@ while True:
         confidence = np.max(avg_pred)
 
         # ---- color based on emotion ----
-        color = (0,255,0) if prediction_label == 'happy' else (0,0,255)
+        emotion_colors = {
+            'happy': (0, 255, 0),        # green
+            'angry': (0, 0, 255),        # red
+            'neutral': (0, 255, 255),    # yellow
+            'sad': (0, 165, 255),        # orange
+            'fear': (255, 0, 0),         # blue
+            'surprise': (203, 192, 255)  # pink
+        }
+        color = emotion_colors.get(prediction_label, (255, 255, 255))
 
         # ---- better rectangle (thicker) ----
         cv2.rectangle(im, (x,y), (x+w,y+h), color, 3)
