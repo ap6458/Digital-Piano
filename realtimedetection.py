@@ -55,7 +55,8 @@ while True:
             'neutral': (0, 255, 255),    # yellow
             'sad': (0, 165, 255),        # orange
             'fear': (255, 0, 0),         # blue
-            'surprise': (203, 192, 255)  # pink
+            'surprise': (203, 192, 255) , # pink
+            'disgust' : (127 ,0, 255)
         }
         color = emotion_colors.get(prediction_label, (255, 255, 255))
 
